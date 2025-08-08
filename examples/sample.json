@@ -2,14 +2,14 @@
   "sheets": [
     {
       "name": "Sales Data",
-      "headers": ["Product", "Q1 Sales", "Q2 Sales", "Q3 Sales", "Q4 Sales", "Total", "Average"],
+      "headers": ["Product", "Q1 Sales", "Q2 Sales", "Q3 Sales", "Q4 Sales"],
       "rows": [
-        ["Widget A", 15000, 18000, 22000, 25000, null, null],
-        ["Widget B", 12000, 14000, 16000, 19000, null, null],
-        ["Widget C", 8000, 9500, 11000, 13000, null, null],
-        ["Gadget X", 25000, 28000, 32000, 35000, null, null],
-        ["Gadget Y", 18000, 20000, 24000, 27000, null, null],
-        ["Service Plan", 5000, 5500, 6000, 6500, null, null]
+        ["Widget A", 15000, 18000, 22000, 25000],
+        ["Widget B", 12000, 14000, 16000, 19000],
+        ["Widget C", 8000, 9500, 11000, 13000],
+        ["Gadget X", 25000, 28000, 32000, 35000],
+        ["Gadget Y", 18000, 20000, 24000, 27000],
+        ["Service Plan", 5000, 5500, 6000, 6500]
       ],
       "config": {
         "freezeRows": 1,
@@ -20,9 +20,7 @@
           { "key": "Q1 Sales", "format": "currency", "formula": "sum", "width": 15 },
           { "key": "Q2 Sales", "format": "currency", "formula": "sum", "width": 15 },
           { "key": "Q3 Sales", "format": "currency", "formula": "sum", "width": 15 },
-          { "key": "Q4 Sales", "format": "currency", "formula": "sum", "width": 15 },
-          { "key": "Total", "format": "currency", "width": 15 },
-          { "key": "Average", "format": "currency", "width": 15 }
+          { "key": "Q4 Sales", "format": "currency", "formula": "sum", "width": 15 }
         ]
       }
     },

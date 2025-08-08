@@ -230,12 +230,12 @@ export class ExcelBuilder {
           startCell,
           endCell
         );
-        formulaRow.getCell(colIndex + 1).value = { formula };
+        formulaRow.getCell(colIndex + 1).value = { formula: `=${formula}` };
         hasFormulas = true;
       } else if (column.formula === 'sum' && isNumeric) {
         // Default to SUM for numeric columns without specific formula
         const formula = FormulaUtils.sum(startCell, endCell);
-        formulaRow.getCell(colIndex + 1).value = { formula };
+        formulaRow.getCell(colIndex + 1).value = { formula: `=${formula}` };
         hasFormulas = true;
       } else {
         formulaRow.getCell(colIndex + 1).value = '';
