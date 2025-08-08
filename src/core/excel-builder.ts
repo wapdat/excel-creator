@@ -263,20 +263,25 @@ export class ExcelBuilder {
    * Apply cell style
    */
   private applyCellStyle(cell: ExcelJS.Cell, style: CellStyle): void {
-    if (style.font) {
-      cell.font = style.font as ExcelJS.Font;
-    }
-    if (style.fill) {
-      cell.fill = style.fill as ExcelJS.Fill;
-    }
-    if (style.border) {
-      cell.border = style.border as ExcelJS.Borders;
-    }
-    if (style.alignment) {
-      cell.alignment = style.alignment as ExcelJS.Alignment;
-    }
-    if (style.numFmt) {
-      cell.numFmt = style.numFmt;
+    try {
+      if (style.font) {
+        cell.font = style.font as ExcelJS.Font;
+      }
+      if (style.fill) {
+        cell.fill = style.fill as ExcelJS.Fill;
+      }
+      if (style.border) {
+        cell.border = style.border as ExcelJS.Borders;
+      }
+      if (style.alignment) {
+        cell.alignment = style.alignment as ExcelJS.Alignment;
+      }
+      if (style.numFmt) {
+        cell.numFmt = style.numFmt;
+      }
+    } catch (error) {
+      // Skip problematic styles for compatibility
+      console.warn('Some styles skipped for compatibility');
     }
   }
 
@@ -289,32 +294,24 @@ export class ExcelBuilder {
     columnCount: number,
     rowCount: number
   ): void {
-    // Freeze rows/columns
-    if (config.freezeRows || config.freezeColumns) {
-      worksheet.views = [{
-        state: 'frozen',
-        xSplit: config.freezeColumns || 0,
-        ySplit: config.freezeRows || 0,
-        activeCell: 'A1'
-      }];
-    }
-
-    // Auto filter
+    // Skip freeze panes and views for better compatibility
+    // These features can cause issues on Mac Excel
+    
+    // Auto filter - simplified approach
     if (config.autoFilter && rowCount > 0) {
-      const lastColumn = FormulaUtils.numberToColumn(columnCount);
-      worksheet.autoFilter = {
-        from: 'A1',
-        to: `${lastColumn}${rowCount + 1}`
-      };
+      try {
+        const lastColumn = FormulaUtils.numberToColumn(columnCount);
+        worksheet.autoFilter = {
+          from: 'A1',
+          to: `${lastColumn}${rowCount + 1}`
+        };
+      } catch (error) {
+        // Silently skip if autoFilter causes issues
+        console.warn('AutoFilter skipped for compatibility');
+      }
     }
 
-    // Grid lines
-    if (config.showGridLines !== undefined) {
-      worksheet.views = worksheet.views || [{}];
-      worksheet.views[0].showGridLines = config.showGridLines;
-    }
-
-    // Default row height
+    // Default row height - safe to apply
     if (config.defaultRowHeight) {
       worksheet.properties.defaultRowHeight = config.defaultRowHeight;
     }
