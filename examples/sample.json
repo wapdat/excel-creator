@@ -1,0 +1,78 @@
+{
+  "sheets": [
+    {
+      "name": "Sales Data",
+      "headers": ["Product", "Q1 Sales", "Q2 Sales", "Q3 Sales", "Q4 Sales", "Total", "Average"],
+      "rows": [
+        ["Widget A", 15000, 18000, 22000, 25000, null, null],
+        ["Widget B", 12000, 14000, 16000, 19000, null, null],
+        ["Widget C", 8000, 9500, 11000, 13000, null, null],
+        ["Gadget X", 25000, 28000, 32000, 35000, null, null],
+        ["Gadget Y", 18000, 20000, 24000, 27000, null, null],
+        ["Service Plan", 5000, 5500, 6000, 6500, null, null]
+      ],
+      "config": {
+        "freezeRows": 1,
+        "autoFilter": true,
+        "alternateRows": true,
+        "columns": [
+          { "key": "Product", "width": 20 },
+          { "key": "Q1 Sales", "format": "currency", "formula": "sum", "width": 15 },
+          { "key": "Q2 Sales", "format": "currency", "formula": "sum", "width": 15 },
+          { "key": "Q3 Sales", "format": "currency", "formula": "sum", "width": 15 },
+          { "key": "Q4 Sales", "format": "currency", "formula": "sum", "width": 15 },
+          { "key": "Total", "format": "currency", "width": 15 },
+          { "key": "Average", "format": "currency", "width": 15 }
+        ]
+      }
+    },
+    {
+      "name": "Customer Info",
+      "headers": ["Customer ID", "Name", "Email", "Region", "Join Date", "Lifetime Value"],
+      "rows": [
+        ["C001", "Alice Johnson", "alice@example.com", "North", "2023-01-15", 45000],
+        ["C002", "Bob Smith", "bob@example.com", "South", "2023-02-20", 38000],
+        ["C003", "Carol White", "carol@example.com", "East", "2023-03-10", 52000],
+        ["C004", "David Brown", "david@example.com", "West", "2023-04-05", 41000],
+        ["C005", "Eve Davis", "eve@example.com", "North", "2023-05-12", 47000],
+        ["C006", "Frank Miller", "frank@example.com", "South", "2023-06-18", 35000],
+        ["C007", "Grace Wilson", "grace@example.com", "East", "2023-07-22", 49000],
+        ["C008", "Henry Moore", "henry@example.com", "West", "2023-08-30", 43000]
+      ],
+      "config": {
+        "freezeRows": 1,
+        "autoFilter": true,
+        "columns": [
+          { "key": "Customer ID", "width": 15 },
+          { "key": "Name", "width": 20 },
+          { "key": "Email", "width": 30 },
+          { "key": "Region", "width": 12 },
+          { "key": "Join Date", "format": "date", "width": 15 },
+          { "key": "Lifetime Value", "format": "currency", "formula": "sum", "width": 18 }
+        ]
+      }
+    },
+    {
+      "name": "Performance Metrics",
+      "headers": ["Metric", "Target", "Actual", "Variance", "% Achievement"],
+      "rows": [
+        ["Revenue", 1000000, 950000, -50000, 0.95],
+        ["New Customers", 500, 523, 23, 1.046],
+        ["Customer Retention", 0.85, 0.88, 0.03, 1.035],
+        ["Average Order Value", 250, 245, -5, 0.98],
+        ["Conversion Rate", 0.03, 0.028, -0.002, 0.933],
+        ["Support Tickets Resolved", 1000, 1050, 50, 1.05]
+      ],
+      "config": {
+        "freezeRows": 1,
+        "columns": [
+          { "key": "Metric", "width": 25 },
+          { "key": "Target", "format": "number", "width": 15 },
+          { "key": "Actual", "format": "number", "width": 15 },
+          { "key": "Variance", "format": "number", "width": 15 },
+          { "key": "% Achievement", "format": "percentage", "width": 18 }
+        ]
+      }
+    }
+  ]
+}

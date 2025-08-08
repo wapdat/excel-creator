@@ -1,0 +1,114 @@
+{
+  "freezeRows": 2,
+  "freezeColumns": 1,
+  "autoFilter": true,
+  "alternateRows": true,
+  "showGridLines": true,
+  "defaultColumnWidth": 15,
+  "defaultRowHeight": 20,
+  "headerStyle": {
+    "font": {
+      "name": "Arial",
+      "bold": true,
+      "size": 14,
+      "color": { "argb": "FFFFFFFF" }
+    },
+    "fill": {
+      "type": "pattern",
+      "pattern": "solid",
+      "fgColor": { "argb": "FF366092" }
+    },
+    "border": {
+      "top": { "style": "thin", "color": { "argb": "FF000000" } },
+      "left": { "style": "thin", "color": { "argb": "FF000000" } },
+      "bottom": { "style": "medium", "color": { "argb": "FF000000" } },
+      "right": { "style": "thin", "color": { "argb": "FF000000" } }
+    },
+    "alignment": {
+      "horizontal": "center",
+      "vertical": "middle",
+      "wrapText": true
+    }
+  },
+  "dataStyle": {
+    "font": {
+      "name": "Calibri",
+      "size": 11,
+      "color": { "argb": "FF000000" }
+    },
+    "border": {
+      "top": { "style": "thin", "color": { "argb": "FFD0D0D0" } },
+      "left": { "style": "thin", "color": { "argb": "FFD0D0D0" } },
+      "bottom": { "style": "thin", "color": { "argb": "FFD0D0D0" } },
+      "right": { "style": "thin", "color": { "argb": "FFD0D0D0" } }
+    },
+    "alignment": {
+      "horizontal": "left",
+      "vertical": "middle",
+      "wrapText": false
+    }
+  },
+  "alternateRowStyle": {
+    "fill": {
+      "type": "pattern",
+      "pattern": "solid",
+      "fgColor": { "argb": "FFF0F0F0" }
+    }
+  },
+  "columns": [
+    {
+      "key": "ID",
+      "header": "ID",
+      "width": 10,
+      "style": {
+        "alignment": { "horizontal": "center" }
+      }
+    },
+    {
+      "key": "Name",
+      "header": "Name",
+      "width": 25,
+      "style": {
+        "font": { "bold": true }
+      }
+    },
+    {
+      "key": "Date",
+      "header": "Date",
+      "width": 15,
+      "format": "date",
+      "style": {
+        "alignment": { "horizontal": "center" }
+      }
+    },
+    {
+      "key": "Amount",
+      "header": "Amount",
+      "width": 18,
+      "format": "currency",
+      "formula": "sum",
+      "style": {
+        "alignment": { "horizontal": "right" },
+        "font": { "color": { "argb": "FF006600" } }
+      }
+    },
+    {
+      "key": "Percentage",
+      "header": "Percentage",
+      "width": 15,
+      "format": "percentage",
+      "style": {
+        "alignment": { "horizontal": "right" }
+      }
+    },
+    {
+      "key": "Status",
+      "header": "Status",
+      "width": 15,
+      "style": {
+        "alignment": { "horizontal": "center" },
+        "font": { "italic": true }
+      }
+    }
+  ]
+}
