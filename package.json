@@ -1,5 +1,5 @@
 {
-  "name": "excel-creator",
+  "name": "@knowcode/excel-creator",
   "version": "1.0.0",
   "description": "Create beautiful Excel spreadsheets from JSON or Markdown with rich styling and formulas",
   "main": "dist/index.js",

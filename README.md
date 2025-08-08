@@ -1,6 +1,6 @@
 # 📊 Excel Creator
 
-[![npm version](https://img.shields.io/npm/v/excel-creator.svg)](https://www.npmjs.com/package/excel-creator)
+[![npm version](https://img.shields.io/npm/v/@knowcode/excel-creator.svg)](https://www.npmjs.com/package/@knowcode/excel-creator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![Node.js Version](https://img.shields.io/node/v/excel-creator.svg)](https://nodejs.org)
@@ -28,10 +28,10 @@
 
 ```bash
 # Global CLI installation
-npm install -g excel-creator
+npm install -g @knowcode/excel-creator
 
 # Local project installation
-npm install excel-creator
+npm install @knowcode/excel-creator
 ```
 
 ### Basic CLI Usage
@@ -50,7 +50,7 @@ cat data.json | excel-creator --output output.xlsx
 ### Basic API Usage
 
 ```javascript
-const { createExcelFromJson, quickExcel } = require('excel-creator');
+const { createExcelFromJson, quickExcel } = require('@knowcode/excel-creator');
 
 // Quick creation from array of objects
 const data = [
@@ -227,7 +227,7 @@ response.send(buffer);
 ##### Custom Styling
 
 ```javascript
-import { ExcelBuilder, StyleUtils } from 'excel-creator';
+import { ExcelBuilder, StyleUtils } from '@knowcode/excel-creator';
 
 const builder = new ExcelBuilder({
   applyStyling: true,
@@ -255,7 +255,7 @@ await builder.save('custom.xlsx');
 ##### Formula Generation
 
 ```javascript
-import { FormulaUtils } from 'excel-creator';
+import { FormulaUtils } from '@knowcode/excel-creator';
 
 // Generate various formulas
 const sumFormula = FormulaUtils.sum('A2', 'A10');
